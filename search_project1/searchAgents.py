@@ -337,7 +337,6 @@ class CornersProblem(search.SearchProblem):
                 if current_position in remaining_corners:
                     remaining_corners = tuple([corner for corner in remaining_corners if corner != current_position])
                 successors.append(((next_position, remaining_corners), action, 1))
-
         self._expanded += 1 # DO NOT CHANGE
         return successors
 
