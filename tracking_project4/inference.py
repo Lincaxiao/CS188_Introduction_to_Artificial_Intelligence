@@ -61,6 +61,7 @@ def constructBayesNet(gameState: hunters.GameState):
     variableDomainsDict = {}
 
     "*** YOUR CODE HERE ***"
+
     raiseNotDefined()
     "*** END YOUR CODE HERE ***"
 
