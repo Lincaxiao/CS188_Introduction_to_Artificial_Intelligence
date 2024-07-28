@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7286208d-0607-417a-ac15-5d1e9c02814b" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bayesNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/bayesNet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bustersAgents.py" beforeDir="false" afterPath="$PROJECT_DIR$/bustersAgents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factorOperations.py" beforeDir="false" afterPath="$PROJECT_DIR$/factorOperations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,14 +39,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "正在合并 main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/MOOC/CS188_Intro_to_ai/project/tracking_project4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/MOOC/CS188_Intro_to_ai/project/tracking_project4&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

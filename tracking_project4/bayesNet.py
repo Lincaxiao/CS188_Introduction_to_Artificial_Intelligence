@@ -733,9 +733,9 @@ def printStarterBayesNet():
 
     # Construct the domain for each variable (a list like)
     variableDomainsDict = {}
-    variableDomainsDict['Raining']  = ['yes', 'no']
+    variableDomainsDict['Raining'] = ['yes', 'no']
     variableDomainsDict['Ballgame'] = ['yes', 'no']
-    variableDomainsDict['Traffic']  = ['yes', 'no']
+    variableDomainsDict['Traffic'] = ['yes', 'no']
 
     # None of the conditional probability tables are assigned yet in our Bayes' net
     bayesNet = constructEmptyBayesNet(variableList, edgeTuplesList, variableDomainsDict)

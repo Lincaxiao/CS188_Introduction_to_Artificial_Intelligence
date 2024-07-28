@@ -73,7 +73,7 @@ def joinFactors(factors: List[Factor]):
     factors are the same, since they come from the same BayesNet.
 
     joinFactors will only allow unconditionedVariables to appear in 
-    one input factor (so their join is well defined).
+    one input factor (so their join is well-defined).
 
     Hint: Factor methods that take an assignmentDict as input 
     (such as getProbability and setProbability) can handle 
@@ -100,9 +100,32 @@ def joinFactors(factors: List[Factor]):
                     "Input factors: \n" +
                     "\n".join(map(str, factors)))
 
-
     "*** YOUR CODE HERE ***"
-    raiseNotDefined()
+    # First get all the factors' unconditioned and conditioned variables，
+    # create a dictionary to store the domain
+    unconditioned = set()
+    conditioned = set()
+    domain = {}
+
+    if (len(factors) == 0):
+        newFactor = Factor(unconditioned, conditioned, domain)
+    else:
+        domain = list(factors)[0].variableDomainsDict()
+
+    for factor in factors:
+        unconditioned = unconditioned.union(factor.unconditionedVariables())
+        conditioned = conditioned.union(factor.conditionedVariables())
+
+    # Remove the intersection of unconditioned and conditioned variables
+    conditioned = conditioned - unconditioned
+    newFactor = Factor(unconditioned, conditioned, domain)
+    # Get all possible assignment dicts
+    for assignment in newFactor.getAllPossibleAssignmentDicts():
+        prob = 1
+        for factor in factors:
+            prob *= factor.getProbability(assignment)
+        newFactor.setProbability(assignment, prob)
+    return newFactor
     "*** END YOUR CODE HERE ***"
 
 ########### ########### ###########
@@ -153,7 +176,21 @@ def eliminateWithCallTracking(callTrackingList=None):
                     "unconditionedVariables: " + str(factor.unconditionedVariables()))
 
         "*** YOUR CODE HERE ***"
-        raiseNotDefined()
+        conditioned = factor.conditionedVariables()
+        unconditioned = factor.unconditionedVariables()
+        domain = factor.variableDomainsDict()
+
+        unconditioned.remove(eliminationVariable)
+        newFactor = Factor(unconditioned, conditioned, domain)
+
+        for assignment in newFactor.getAllPossibleAssignmentDicts(): # Iterate over all possible assignments
+            prob = 0
+            for value in domain[eliminationVariable]: # Iterate over the domain of the variable
+                assignment[eliminationVariable] = value # Eliminate the variable
+                prob += factor.getProbability(assignment) # Sum the probability
+            newFactor.setProbability(assignment, prob) # Set the probability
+
+        return newFactor
         "*** END YOUR CODE HERE ***"
 
     return eliminate
